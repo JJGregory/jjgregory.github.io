@@ -1,0 +1,27 @@
+---
+title: "Week 3 assignment"
+author: "Jonathan Gregory"
+date: "5 June 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 5 June 2018
+
+A plot of price against number of carats for internally flawless and ideally cut diamonds from R's 'diamonds' data set
+
+```{r, include = FALSE}
+library(plotly)
+```
+
+```{r, echo = FALSE}
+plot_ly(data = diamonds[diamonds$cut == "Ideal" &
+                          diamonds$clarity == "IF",], x = ~carat, y = ~price,
+        type = "scatter", mode = "markers")
+```
+
+
+
